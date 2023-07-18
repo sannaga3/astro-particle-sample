@@ -1,0 +1,21 @@
+---
+const linkStyle = "text-black hover:text-blue-400";
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
+---
+
+<div>
+  <div class="h-16 flex items-center bg-slate-700 px-10">
+    <div class="text-3xl mr-12">logo</div>
+    <div class="flex space-x-10 text-2xl p-2">
+      <a href="/" class={`${currentPath === "" ? "text-blue-400" : ""} ${linkStyle}`}>
+        Home
+      </a>
+      <a href="/about" class={`${currentPath === "about" ? "text-blue-400" : ""} ${linkStyle}`}>
+        About
+      </a>
+    </div>
+  </div>
+</div>
+
